@@ -64,7 +64,7 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={Link} to="/presentations" onClick={() => updateExpanded(false)}>
                 <ImBubbles style={{ marginBottom: "2px" }} /> Presentations
               </Nav.Link>
             </Nav.Item>

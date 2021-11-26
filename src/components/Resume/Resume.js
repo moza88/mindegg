@@ -1,49 +1,49 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import axios from "axios";
 import pdf from "../../Assets/MabelOza_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page } from 'react-pdf';
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+const resumeLink =
+  "https://raw.githubusercontent.com/moza88/mindegg/master/src/Assets/MabelOza_Resume.pdf";
 
 function Resume() {
-  const uri = "https://porfolio-backend.vercel.app/ranks/getRanks";
-  const [spojRank, upadteSpojRank] = useState(0);
-  const [hackerrank, upadteHackerank] = useState(0);
-  const [sem, upadateSem] = useState(0);
-  const [cgpa, upadteCgpa] = useState(0);
+  const [width, setWidth] = useState(1200);
 
   useEffect(() => {
-    axios
-      .get(uri)
-      .then((res) => {
-        upadteSpojRank(res.data.message[0].spojRank);
-        upadteHackerank(res.data.message[1].hackerrank);
-        upadteCgpa(res.data.message[2].cgpa);
-        upadateSem(res.data.message[3].sem);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    setWidth(window.innerWidth);
   }, []);
 
   return (
-    <Container fluid className="resume-section">
-      <Particle />
-      <Container>
+    <div>
+      <Container fluid className="resume-section">
+        <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button variant="primary" href={pdf} target="_blank">
             <AiOutlineDownload />
-            &nbsp;Download CVkk
+            &nbsp;Download CV
           </Button>
-            <Document file={pdf}>
-                <Page pageNumber={2} />
-            </Document>
         </Row>
 
+        <Row className="resume">
+          <Document file={pdf}>
+            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            <Page pageNumber={2} scale={width > 786 ? 1.7 : 0.6} />
+          </Document>
+        </Row>
+
+        <Row style={{ justifyContent: "center", position: "relative" }}>
+          <Button variant="primary" href={pdf} target="_blank">
+            <AiOutlineDownload />
+            &nbsp;Download CV
+          </Button>
+        </Row>
       </Container>
-    </Container>
+    </div>
   );
 }
 
