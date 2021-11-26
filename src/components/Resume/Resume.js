@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import Resumecontent from "./ResumeContent";
 import axios from "axios";
 import pdf from "../../Assets/MabelOza_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
+import { Document, Page } from 'react-pdf';
 
 function Resume() {
   const uri = "https://porfolio-backend.vercel.app/ranks/getRanks";
@@ -35,8 +35,11 @@ function Resume() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button variant="primary" href={pdf} target="_blank">
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;Download CVkk
           </Button>
+            <Document file={pdf}>
+                <Page pageNumber={2} />
+            </Document>
         </Row>
 
       </Container>

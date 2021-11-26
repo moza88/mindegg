@@ -6,8 +6,7 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-            "Making the financial world more inclusive.",
-            "",
+            "Making the financial world more inclusive."
         ],
         autoStart: true,
         loop: true,

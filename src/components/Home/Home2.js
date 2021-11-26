@@ -5,7 +5,6 @@ import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
   AiOutlineTwitter,
-  AiFillInstagram,
   AiFillMediumCircle,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -20,7 +19,7 @@ function Home2() {
               <span className="purple">Our Mission</span>
             </h1>
             <p className="home-about-body">
-              Leveraging Blockchain technology to create financial products thare cheaper and more streamlined.
+              Leveraging Blockchain technology to create affordable and streamlined financial products.
 
             </p>
           </Col>

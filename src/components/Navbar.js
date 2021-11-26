@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/MindEgg_Logo.png";
 import { Link } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
+import logo from "../Assets/MindEgg_Logo_small.png"
+import {ImBlog, ImBubbles} from "react-icons/im";
 import {
   AiOutlineHome,
   AiOutlineUser,
@@ -34,9 +34,12 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
+
+        <Nav.Item>
+          <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+            <AiOutlineHome style={{ marginBottom: "2px" }} /> MindEgg
+          </Nav.Link>
+        </Nav.Item>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -49,19 +52,20 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto" defaultActiveKey="#home">
+
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+              <Nav.Link
+                  as={Link}
+                  to="/about"
+                  onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+                <ImBubbles style={{ marginBottom: "2px" }} /> Presentations
               </Nav.Link>
             </Nav.Item>
 
