@@ -33,19 +33,17 @@ function Presentation() {
                                 }}
                             >
                                 <h3 style={{color: 'purple'}} className="vertical-timeline-element-title">
-                                    {element.title} ({element.date})
+                                    {element.title}
                                 </h3>
                                 <h5 style={{color: 'black'}} className="vertical-timeline-element-subtitle">
                                     {element.location}
                                 </h5>
+                                <a href={element.link}>{element.link_description}</a>
                                 <p style={{color: 'black'}} id="description">{element.description}</p>
                             </VerticalTimelineElement>
                         )
                     })}
                 </VerticalTimeline>
-                <b className="purple">University of Illinois Chicago</b><br/>
-                Guest Lecturer - September 2021
-
 
             </Container>
         </Container>
