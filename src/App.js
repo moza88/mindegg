@@ -5,8 +5,8 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/Resume";
-import Presentation from "./components/Presentations/Presentation"
 import Blog from "./components/Blog/Blog"
+import SignIn from "./components/Auth/SignIn"
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
@@ -36,8 +36,9 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
-          <Route path="/presentations" component={Presentation}/>
           <Route path="/blog" component={Blog}/>
+          <Route path="/signin" component={SignIn}/>
+
         </Switch>
         <Footer />
       </div>
