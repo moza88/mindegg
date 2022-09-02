@@ -3,7 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import logo from "../Assets/MindEgg_Logo_small.png"
 import {ImBlog, ImBubbles} from "react-icons/im";
 import {
   AiOutlineHome,
@@ -37,7 +36,7 @@ function NavBar() {
 
         <Nav.Item>
           <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-            <AiOutlineHome style={{ marginBottom: "2px" }} /> MindEgg
+            <AiOutlineHome style={{ marginBottom: "2px" }} /> Abja
           </Nav.Link>
         </Nav.Item>
         <Navbar.Toggle
@@ -63,29 +62,24 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link as={Link} to="/presentations" onClick={() => updateExpanded(false)}>
-                <ImBubbles style={{ marginBottom: "2px" }} /> Presentations
-              </Nav.Link>
-            </Nav.Item>
 
 {/*            <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
+                  as={Link}
+                  to="/blog"
+                  onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Docs
               </Nav.Link>
             </Nav.Item>*/}
 
             <Nav.Item>
               <Nav.Link
                   as={Link}
-                  to="/blog"
+                  to="/signin"
                   onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blog
+                <ImBlog style={{ marginBottom: "2px" }} /> Signin
               </Nav.Link>
             </Nav.Item>
 
